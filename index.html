@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My filter Array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>higher-order functions</h1>
+    <h2>My filter Array</h2>
+    <pre data-language='js'>
+            
+        (<code class="pd">function</code>(){
+            
+                
+            <code class="pd">var</code> <code class="d">arr</code>=[
+                {<code class="f">id</code> : <code class="int">0</code>, <code class="f">text</code> : <code class="s">'JavaScript'</code>},
+                {<code class="f">id</code> : <code class="int">1</code>, <code class="f">text</code> : <code class="s">'Java'</code>},
+                {<code class="f">id</code> : <code class="int">2</code>, <code class="f">text</code> : <code class="s">'C++'</code>},
+                {<code class="f">id</code> : <code class="int">3</code>, <code class="f">text</code> : <code class="s">'PHP'</code>},
+            ];
+            
+            <code class="pd">function</code> <code class="f">MyFilter</code>(<code class="params">fn</code>)
+            {
+                <code class="pd">var</code> <code class="d">newArr</code> = [];
+                <code class="pd">this</code>[<code class="int">0</code>].<code class="pd">forEach</code>((<code class="params">el</code>)=> { if(<code class="d">fn</code>(<code class="params">el</code>)) <code class="d">newArr</code>.<code class="pd">push</code>(<code class="d">el</code>);});
+                <code class="rt">return</code> [].<code class="f">slice</code>.<code class="f">call</code>(<code class="params">newArr</code>, <code class="int">0</code>);
+            }
+            
+            <code class="d">languages</code> = <code class="pd">Object</code>.<code class="pd">setPrototypeOf</code> ({ <code class="d">MyFilter</code> }, <code class="pd">Array</code>.<code class="f"></code>prototype</code> );
+            
+            <code class="d">languages</code>.<code class="pd">push</code>(<code class="d">arr</code>);
+            
+            
+            <code class="d">l</code> = <code class="d">languages</code>.<code class="f">MyFilter</code>(<code class="pd">function</code>(<code class="params">obj</code>){
+                <code class="rt">return</code> <code class="params">obj</code>.<code class="f">text</code> === <code class="s">'JavaScript'</code> ;
+            });
+            <code class="pd">console</code>.<code class="f">log</code>(<code class="d">l</code>);
+            
+            })();
+    </pre>
+    
+    <script src="script.js"></script>
+</body>
+</html>

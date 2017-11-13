@@ -1,0 +1,21 @@
+body{font-family: monospace}
+
+pre{
+    font-family: monospace;
+    font-size: .9em;
+    padding: 15px;
+    background-color: #333;
+    color: #FFF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+code.pd{color: #00bcd4;}
+code.d{color: #4caf50;}
+code.f{color: #009688;}
+code.int{color : sandybrown;}
+code.params{color: #8bc34a;}
+code.rt{color: violet;}
+code.s{color: #CDDC39}
